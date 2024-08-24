@@ -2,9 +2,9 @@ import smtplib
 from email.mime.text import MIMEText
 
 # Email details
-sender_email = 'arunvnaik2002@gmail.com'  # Replace with your Gmail address
-password = 'xkmp khfh bcbu kpwn'         # Replace with your App Password
-receiver_email = 'arunnaik0408@gmail.com'  # Replace with recipient's email
+sender_email = 'arun@gmail.com'  # Replace with your Gmail address
+password = '122112211'         # Replace with your App Password
+receiver_email = 'arunn'  # Replace with recipient's email
 subject = 'Test Email'
 body = 'This is a test email from Django.'
 
