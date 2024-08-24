@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Books</title>
+</head>
+<body>
+    <h1>Upload Books</h1>
+
+    <form action="{% url 'upload_books' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea name="description" required></textarea><br><br>
+
+        <label for="cost">Cost:</label>
+        <input type="number" name="cost" required><br><br>
+
+        <label for="year_of_published">Year of Published:</label>
+        <input type="number" name="year_of_published" required><br><br>
+
+        <label for="visibility">Visibility:</label>
+        <select name="visibility">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+        </select><br><br>
+
+        <label for="file">Choose a file:</label>
+        <input type="file" name="file" accept=".pdf,.jpeg" required><br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Your Uploaded Files</h2>
+    <ul>
+        {% for file in uploaded_files %}
+            <li>{{ file.title }} - {{ file.year_of_published }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
